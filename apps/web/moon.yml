@@ -1,0 +1,28 @@
+$schema: 'https://moonrepo.dev/schemas/project.json'
+
+language: "typescript"
+
+project:
+  type: "application"
+
+tags: 
+  - "astro"
+
+tasks:
+  dev:
+    command: "bun run dev"
+    type: "run" 
+    options:
+      cache: false
+
+  build:
+    command: "bun run build"
+    type: "build"
+    inputs:
+      - "src/**/*"
+      - "public/**/*"
+      - "astro.config.mjs"
+      - "package.json"
+      - "tsconfig.json"
+    outputs:
+      - "dist/**/*"
